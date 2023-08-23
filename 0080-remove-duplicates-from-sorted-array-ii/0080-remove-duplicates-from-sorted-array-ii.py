@@ -1,6 +1,6 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        for i in range(len(nums)-2,0,-1):
-            if(nums[i]==nums[i-1] and nums[i]==nums[i+1]):
-                nums.pop(i+1)
+        for num in nums[::-1]:
+            if nums.count(num) > 2:
+                nums.remove(num)
         return len(nums)

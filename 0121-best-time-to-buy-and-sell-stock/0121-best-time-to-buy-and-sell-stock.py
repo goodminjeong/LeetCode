@@ -3,9 +3,15 @@ class Solution:
         buy, sell, profit = prices[0], 0, 0
 
         for i in range(len(prices)-1):
-            buy = min(prices[i], buy)
-            sell = max(prices[i+1], buy)
-            profit = max(profit, sell - buy)
+            if prices[i] < buy:
+                buy = prices[i]
+                
+            if buy < prices[i+1]:
+                sell = prices[i+1]
+                
+            if profit < sell - buy:
+                profit = sell - buy
+                
             sell = 0
             
         return profit

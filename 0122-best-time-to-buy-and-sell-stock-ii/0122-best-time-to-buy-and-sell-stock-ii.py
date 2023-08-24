@@ -16,4 +16,5 @@ class Solution:
                 buy = prices[i+1]
                 
             sell = 0
+            
         return profit
